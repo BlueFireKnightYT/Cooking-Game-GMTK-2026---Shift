@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5072544852817137236}
   m_Layer: 6
   m_Name: Raw Patty
-  m_TagString: Untagged
+  m_TagString: Patty
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +113,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 2, y: 2.4070907, z: 2}
-  m_Center: {x: -1.2883178e-31, y: 0.00000011920929, z: -9.8607613e-32}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6533501720856081721
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -153,5 +153,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26273bff525416c47814b47741d80942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  cookSpeed: 0.01
+  cookSpeed: 0.03
   canServe: 0

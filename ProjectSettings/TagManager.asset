@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Pan
   - Stove
+  - Burger
+  - Patty
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Pickup
-  - 
+  - Customer
   - 
   - 
   - 
