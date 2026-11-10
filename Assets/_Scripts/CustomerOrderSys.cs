@@ -11,7 +11,6 @@ public class CustomerOrderSys : MonoBehaviour
 
     public List<GameObject> possibleOrders = new List<GameObject>();
     public itemReader counterItemReader;
-    public bool orderCompleted = false;
 
     private void Start()
     {
@@ -41,6 +40,11 @@ public class CustomerOrderSys : MonoBehaviour
             bool itemFound = false;
             foreach(GameObject item in counterItemReader.items)
             {
+                if(!item.GetComponent<CookMeat>().canServe)
+                {
+                    print("Can't serve this item");
+                    break;
+                }
                 if (order.CompareTag(item.tag))
                 {
                     correctItems.Add(item);
@@ -64,7 +68,7 @@ public class CustomerOrderSys : MonoBehaviour
             //Destroy(item);
         }
 
-        orderCompleted = true;
+        GetComponent<CustomerMove>().completedOrder = true;
         correctItems.Clear();
     }
 }

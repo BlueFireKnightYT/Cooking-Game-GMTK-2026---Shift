@@ -8,7 +8,7 @@ public class CustomerMove : MonoBehaviour
 
 
     Transform targetpos;
-    int index = 0;
+    public int index = 0;
     bool startedOrder;
     public bool completedOrder;
 
@@ -21,10 +21,20 @@ public class CustomerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            transform.position = Vector3.MoveTowards(transform.position, targetpos.position, speed * Time.deltaTime);
-
         if (transform.position == waypoints[index].position)
         {
+            if(completedOrder)
+            { 
+                index--;
+                targetpos = waypoints[index];
+
+                if(index == 0)
+                {
+                    completedOrder = false;
+                    startedOrder = false;
+                }
+                return;
+            }
             if (index == waypoints.Count - 1)
             {
                 if(!startedOrder)
@@ -34,12 +44,10 @@ public class CustomerMove : MonoBehaviour
                 }
                 return;
             }
-
-            if (!completedOrder)
-                index++;
-            else
-                index--;
+            
+            index++;
             targetpos = waypoints[index];
         }
+        else transform.position = Vector3.MoveTowards(transform.position, targetpos.position, speed * Time.deltaTime);
     }
 }
